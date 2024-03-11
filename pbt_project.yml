@@ -16,7 +16,7 @@ jobs:
     scheduler:
       Databricks: {}
     cloudProvider: null
-    jobSize: null
+    jobSize: prophecy_internal_jobs
     scheduleCron: None
     timeout: null
     alerting:
@@ -29,7 +29,7 @@ jobs:
       clusterMode:
         Single: {}
       clusterId: null
-    enabled: null
+    enabled: true
     createdAt: '2024-03-11 09:41:54'
     author: sony@prophecy.io
 gemContainer:
