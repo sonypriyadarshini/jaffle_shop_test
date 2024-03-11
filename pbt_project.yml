@@ -8,7 +8,30 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs: {}
+jobs:
+  jobs/xx:
+    name: xx
+    description: ''
+    fabricUID: 247
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: None
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-03-11 09:41:54'
+    author: sony@prophecy.io
 gemContainer:
   languageVersion: ''
   gemLibsVersion: ''
