@@ -1,6 +1,6 @@
 name: jaffle_shop
 description: ''
-version: '2'
+version: 0.0.1
 author: null
 language: sql
 buildSystem: ''
@@ -8,30 +8,7 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs:
-  jobs/xx:
-    name: xx
-    description: ''
-    fabricUID: 247
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: prophecy_internal_jobs
-    scheduleCron: None
-    timeout: null
-    alerting:
-      emails: ''
-      onStart: false
-      onSuccess: false
-      onFailure: false
-    pipelines: []
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2024-03-11 09:41:54'
-    author: sony@prophecy.io
+jobs: {}
 gemContainer:
   languageVersion: ''
   gemLibsVersion: ''
