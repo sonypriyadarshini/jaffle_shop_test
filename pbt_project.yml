@@ -209,11 +209,11 @@ sqlSeeds:
   .prophecy/metadata/sqlseeds/raw_customers:
     name: raw_customers
     schema:
-      providerType: Snowflake
+      providerType: Databricks
       fields:
       - name: id
         dataType:
-          type: Number
+          type: Integer
       - name: first_name
         dataType:
           type: String
@@ -228,14 +228,14 @@ sqlSeeds:
   .prophecy/metadata/sqlseeds/raw_orders:
     name: raw_orders
     schema:
-      providerType: Snowflake
+      providerType: Databricks
       fields:
       - name: id
         dataType:
-          type: Number
+          type: Integer
       - name: user_id
         dataType:
-          type: Number
+          type: Integer
       - name: order_date
         dataType:
           type: Date
@@ -250,20 +250,20 @@ sqlSeeds:
   .prophecy/metadata/sqlseeds/raw_payments:
     name: raw_payments
     schema:
-      providerType: Snowflake
+      providerType: Databricks
       fields:
       - name: id
         dataType:
-          type: Number
+          type: Integer
       - name: order_id
         dataType:
-          type: Number
+          type: Integer
       - name: payment_method
         dataType:
           type: String
       - name: amount
         dataType:
-          type: Number
+          type: Integer
     description: null
     author: sony@prophecy.io
     files:
