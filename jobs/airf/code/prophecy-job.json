@@ -1,0 +1,195 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "735",
+    "jobId" : "jobs/airf",
+    "name" : "airf",
+    "dagName" : "staging_sony_jaffle_shop_airf",
+    "schedule" : "None",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "735",
+      "name" : "airflw_260"
+    }, {
+      "id" : "1907",
+      "name" : "new253"
+    }, {
+      "id" : "1908",
+      "name" : "another253"
+    }, {
+      "id" : "2421",
+      "name" : "airflow_OS",
+      "artifactsLocation" : "/mnt/airflow/artifacts"
+    }, {
+      "id" : "2489",
+      "name" : "mwa_check_mig"
+    }, {
+      "id" : "2490",
+      "name" : "mwa_2"
+    }, {
+      "id" : "2491",
+      "name" : "mwa-acs"
+    }, {
+      "id" : "2504",
+      "name" : "mwa_assume"
+    }, {
+      "id" : "2505",
+      "name" : "new_mwaa_assumed"
+    }, {
+      "id" : "2506",
+      "name" : "mwa_new_asu"
+    }, {
+      "id" : "2509",
+      "name" : "assumed_now1"
+    }, {
+      "id" : "2510",
+      "name" : "assumed_on"
+    }, {
+      "id" : "2511",
+      "name" : "offassume"
+    }, {
+      "id" : "2526",
+      "name" : "air_PM1",
+      "trialStartDate" : 1711103436654
+    } ],
+    "catchup" : true,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "HXLWjrFpO-DaCYdhQuF0N$$aU0cF-6hoi0vXXRm-lVyR" : {
+      "id" : "HXLWjrFpO-DaCYdhQuF0N$$aU0cF-6hoi0vXXRm-lVyR",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : -660,
+        "y" : -220
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5ZAcMbMywlT-H3YZuo6iG$$s8PuDFrvnqA4U1WRAle1N",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "0cZCKp0fVjaKbc3SDJUZx$$Lk8uPxBP5ZcLaIPax2_tp",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : false,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : false,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "model" : "stg_customers",
+        "warnErrorOptions" : null,
+        "gitTokenSecret" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "currentProjectSnapshots" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "runSnapshots" : false,
+        "noPrint" : null,
+        "quiet" : null,
+        "projectId" : "10696",
+        "runMode" : "model",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : null,
+        "noStaticParser" : null,
+        "loadingModels" : false,
+        "runTest" : true,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : null,
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "snapshot" : null,
+        "isProphecyManaged" : false,
+        "profile" : null,
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "sqlFabricId" : "1584",
+        "gitEntityValue" : "branch",
+        "logFormat" : null,
+        "runModelWithChildren" : false,
+        "dbtProfileSecret" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : false,
+        "loadingSnapshots" : false,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : null,
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "stg_customers",
+          "value" : "stg_customers",
+          "id" : "10696/.prophecy/metadata/sqlmodels/stg_customers",
+          "name" : "stg_customers"
+        }, {
+          "label" : "stg_payments",
+          "value" : "stg_payments",
+          "id" : "10696/.prophecy/metadata/sqlmodels/stg_payments",
+          "name" : "stg_payments"
+        }, {
+          "label" : "customers",
+          "value" : "customers",
+          "id" : "10696/.prophecy/metadata/sqlmodels/customers",
+          "name" : "customers"
+        }, {
+          "label" : "orders",
+          "value" : "orders",
+          "id" : "10696/.prophecy/metadata/sqlmodels/orders",
+          "name" : "orders"
+        }, {
+          "label" : "stg_orders",
+          "value" : "stg_orders",
+          "id" : "10696/.prophecy/metadata/sqlmodels/stg_orders",
+          "name" : "stg_orders"
+        } ],
+        "profilesDir" : null,
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ ]
+}

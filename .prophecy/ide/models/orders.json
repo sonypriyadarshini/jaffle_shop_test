@@ -2,10 +2,179 @@
   "id" : "orders",
   "metainfo" : {
     "label" : "orders",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
-      "sources" : [ ]
+      "sources" : [ {
+        "source" : {
+          "table" : {
+            "name" : "raw_orders",
+            "sourceType" : "Seed"
+          }
+        },
+        "sourceComponentKind" : "Seed",
+        "sourceLabel" : "raw_orders",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "IjW6EyTvEukLlIVMlH890",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "id" ],
+            "conditions" : [ {
+              "alias" : "raw_orders",
+              "expression" : {
+                "expression" : "raw_customers.id = raw_orders.id"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "raw_orders.user_id_very_looooonggggggggggggggggg"
+              },
+              "alias" : "user_id_very_looooonggggggggggggggggg"
+            }, {
+              "expression" : {
+                "expression" : "raw_orders.order_date"
+              },
+              "alias" : "order_date"
+            }, {
+              "expression" : {
+                "expression" : "raw_orders.status"
+              },
+              "alias" : "status"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name_looooonggggggggggggg"
+              },
+              "alias" : "first_name_looooonggggggggggggg"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "raw_orders"
+          },
+          "joinColumns" : [ "id" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "raw_payments",
+            "sourceType" : "Seed"
+          }
+        },
+        "sourceComponentKind" : "Seed",
+        "sourceLabel" : "raw_payments",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "IjW6EyTvEukLlIVMlH890",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "id" ],
+            "conditions" : [ {
+              "alias" : "raw_payments",
+              "expression" : {
+                "expression" : "raw_customers.id = raw_payments.id"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "raw_payments.order_id"
+              },
+              "alias" : "order_id"
+            }, {
+              "expression" : {
+                "expression" : "raw_payments.payment_method"
+              },
+              "alias" : "payment_method"
+            }, {
+              "expression" : {
+                "expression" : "raw_payments.amount"
+              },
+              "alias" : "amount"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name_looooonggggggggggggg"
+              },
+              "alias" : "first_name_looooonggggggggggggg"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "raw_payments"
+          },
+          "joinColumns" : [ "id" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "stg_customers",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "stg_customers",
+        "canJoinWith" : [ {
+          "processLabel" : "raw_customers",
+          "processId" : "IjW6EyTvEukLlIVMlH890",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "id" ],
+            "conditions" : [ {
+              "alias" : "stg_customers",
+              "expression" : {
+                "expression" : "raw_customers.id = stg_customers.id"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "stg_customers.ID"
+              },
+              "alias" : "ID"
+            }, {
+              "expression" : {
+                "expression" : "stg_customers.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name_looooonggggggggggggg"
+              },
+              "alias" : "first_name_looooonggggggggggggg"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            } ],
+            "headAlias" : "stg_customers"
+          },
+          "joinColumns" : [ "id" ],
+          "isRecommended" : false
+        } ]
+      } ]
     },
     "graphConfig" : {
       "userDefinedConfig" : {
@@ -22,6 +191,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "final",
+        "x" : 420,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -36,10 +207,6 @@
         "expressions" : [ {
           "expression" : {
             "expression" : "orders.order_id"
-          }
-        }, {
-          "expression" : {
-            "expression" : "orders.customer_id"
           }
         }, {
           "expression" : {
@@ -68,8 +235,8 @@
           },
           "alias" : "amount"
         } ],
-        "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "O4j8VWPh##order_id", "yoelu76D##order_id", "O4j8VWPh##order_id", "O4j8VWPh##order_date", "O4j8VWPh##status", "yoelu76D##total_amount" ],
         "headAlias" : "orders"
       },
       "ports" : {
@@ -79,11 +246,6 @@
             "providerType" : "Snowflake",
             "fields" : [ {
               "name" : "ORDER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -148,11 +310,6 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "CUSTOMER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
               "name" : "ORDER_DATE",
               "dataType" : {
                 "type" : "Date"
@@ -200,6 +357,8 @@
       "component" : "Aggregate",
       "metadata" : {
         "label" : "order_payments",
+        "x" : 220,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -311,11 +470,59 @@
         "autoUpdateOnRun" : false
       }
     },
+    "IjW6EyTvEukLlIVMlH890" : {
+      "id" : "IjW6EyTvEukLlIVMlH890",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "raw_customers",
+        "slug" : "raw_customers",
+        "x" : -280,
+        "y" : -100,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "raw_customers",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "SJtcXOmRp30B2lnSZqWyO",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "first_name_looooonggggggggggggg",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
     "orders##LpNiJvwl" : {
       "id" : "orders##LpNiJvwl",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "orders",
+        "x" : 620,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -336,11 +543,6 @@
             "providerType" : "Snowflake",
             "fields" : [ {
               "name" : "ORDER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -393,11 +595,6 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "CUSTOMER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
               "name" : "ORDER_DATE",
               "dataType" : {
                 "type" : "Date"
@@ -445,6 +642,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "orders",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -461,11 +660,6 @@
             "providerType" : "Snowflake",
             "fields" : [ {
               "name" : "ORDER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -492,6 +686,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "payments",
+        "x" : 20,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {

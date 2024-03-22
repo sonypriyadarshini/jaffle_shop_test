@@ -12,10 +12,7 @@ WITH source AS (
 
 renamed AS (
 
-  SELECT 
-    id AS customer_id,
-    first_name,
-    last_name
+  SELECT id AS id
   
   FROM source
 

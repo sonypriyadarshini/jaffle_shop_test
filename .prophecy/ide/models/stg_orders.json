@@ -2,7 +2,7 @@
   "id" : "stg_orders",
   "metainfo" : {
     "label" : "stg_orders",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -20,6 +20,8 @@
       "component" : "Seed",
       "metadata" : {
         "label" : "source",
+        "x" : 20,
+        "y" : 20,
         "phase" : 0,
         "comment" : "-\n    Normally we would select from the table here, but we are using seeds to load\n    our data in this project\n    "
       },
@@ -41,7 +43,7 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "user_id",
+              "name" : "user_id_very_looooonggggggggggggggggg",
               "dataType" : {
                 "type" : "Number"
               }
@@ -68,21 +70,18 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "renamed",
+        "x" : 220,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
       "properties" : {
-        "columnsSelector" : [ "amD4GpoE##id", "amD4GpoE##user_id", "amD4GpoE##order_date", "amD4GpoE##status" ],
+        "columnsSelector" : [ "amD4GpoE##id", "amD4GpoE##order_date", "amD4GpoE##status" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "id"
           },
           "alias" : "order_id"
-        }, {
-          "expression" : {
-            "expression" : "user_id"
-          },
-          "alias" : "customer_id"
         }, {
           "expression" : {
             "expression" : "order_date"
@@ -104,7 +103,7 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "user_id",
+              "name" : "user_id_very_looooonggggggggggggggggg",
               "dataType" : {
                 "type" : "Number"
               }
@@ -132,11 +131,6 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "CUSTOMER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
               "name" : "ORDER_DATE",
               "dataType" : {
                 "type" : "Date"
@@ -159,6 +153,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "stg_orders",
+        "x" : 420,
+        "y" : 20,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -183,11 +179,6 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "CUSTOMER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
               "name" : "ORDER_DATE",
               "dataType" : {
                 "type" : "Date"
@@ -207,11 +198,6 @@
             "providerType" : "Snowflake",
             "fields" : [ {
               "name" : "ORDER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_ID",
               "dataType" : {
                 "type" : "Number"
               }

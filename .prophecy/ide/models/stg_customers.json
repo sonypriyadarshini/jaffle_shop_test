@@ -20,8 +20,8 @@
       "component" : "Seed",
       "metadata" : {
         "label" : "source",
-        "x" : 20,
-        "y" : 20,
+        "x" : -240,
+        "y" : -40,
         "phase" : 0,
         "comment" : "-\n    Normally we would select from the table here, but we are using seeds to load\n    our data in this project\n    "
       },
@@ -43,7 +43,7 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "first_name",
+              "name" : "first_name_looooonggggggggggggg",
               "dataType" : {
                 "type" : "String"
               }
@@ -65,26 +65,18 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "renamed",
-        "x" : 220,
-        "y" : 20,
+        "x" : 100,
+        "y" : -60,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
       "properties" : {
-        "columnsSelector" : [ "KEKosME6##id", "KEKosME6##first_name", "KEKosME6##last_name" ],
+        "columnsSelector" : [ "KEKosME6##id" ],
         "expressions" : [ {
           "expression" : {
             "expression" : "id"
           },
-          "alias" : "customer_id"
-        }, {
-          "expression" : {
-            "expression" : "first_name"
-          }
-        }, {
-          "expression" : {
-            "expression" : "last_name"
-          }
+          "alias" : "id"
         } ]
       },
       "ports" : {
@@ -98,7 +90,7 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "first_name",
+              "name" : "first_name_looooonggggggggggggg",
               "dataType" : {
                 "type" : "String"
               }
@@ -116,7 +108,7 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -125,16 +117,11 @@
               "dataType" : {
                 "type" : "String"
               }
-            }, {
-              "name" : "LAST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
             } ]
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false,
+        "isCustomOutputSchema" : true,
         "autoUpdateOnRun" : false
       }
     },
@@ -164,17 +151,12 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
             }, {
               "name" : "FIRST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "LAST_NAME",
               "dataType" : {
                 "type" : "String"
               }
@@ -187,17 +169,12 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
             }, {
               "name" : "FIRST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "LAST_NAME",
               "dataType" : {
                 "type" : "String"
               }
@@ -211,17 +188,17 @@
     }
   },
   "connections" : [ {
-    "id" : "A4VshPEP",
-    "source" : "source##BzRTmUr0",
-    "sourcePort" : "w64RhFPm",
-    "target" : "renamed##OTjZLl6Z",
-    "targetPort" : "KEKosME6"
-  }, {
     "id" : "iDOAW3D1",
     "source" : "renamed##OTjZLl6Z",
     "sourcePort" : "XRkgAp4Q",
     "target" : "stg_customers##fscJymYu",
     "targetPort" : "qPLrX7AJ"
+  }, {
+    "id" : "DHZCsbIcoZ_Z-GGdP24y9",
+    "source" : "source##BzRTmUr0",
+    "sourcePort" : "w64RhFPm",
+    "target" : "renamed##OTjZLl6Z",
+    "targetPort" : "KEKosME6"
   } ],
   "component" : "Model"
 }

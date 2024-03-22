@@ -2,7 +2,7 @@
   "id" : "customers",
   "metainfo" : {
     "label" : "customers",
-    "autoLayout" : true,
+    "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -20,6 +20,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "customers",
+        "x" : 680,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -39,7 +41,7 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -47,31 +49,6 @@
               "name" : "FIRST_NAME",
               "dataType" : {
                 "type" : "String"
-              }
-            }, {
-              "name" : "LAST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "FIRST_ORDER",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "MOST_RECENT_ORDER",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "NUMBER_OF_ORDERS",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_LIFETIME_VALUE",
-              "dataType" : {
-                "type" : "Number"
               }
             } ]
           },
@@ -82,7 +59,7 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -90,31 +67,6 @@
               "name" : "FIRST_NAME",
               "dataType" : {
                 "type" : "String"
-              }
-            }, {
-              "name" : "LAST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "FIRST_ORDER",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "MOST_RECENT_ORDER",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "NUMBER_OF_ORDERS",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_LIFETIME_VALUE",
-              "dataType" : {
-                "type" : "Number"
               }
             } ]
           },
@@ -129,6 +81,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "customers",
+        "x" : 280,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -144,17 +98,12 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
             }, {
               "name" : "FIRST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "LAST_NAME",
               "dataType" : {
                 "type" : "String"
               }
@@ -171,6 +120,8 @@
       "component" : "Join",
       "metadata" : {
         "label" : "final",
+        "x" : 480,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -178,48 +129,27 @@
         "conditions" : [ {
           "alias" : "customer_orders",
           "expression" : {
-            "expression" : "customers.customer_id = customer_orders.customer_id"
+            "expression" : "customers.id = customers.id"
           },
           "joinType" : "LEFT"
         }, {
           "alias" : "customer_payments",
           "expression" : {
-            "expression" : "customers.customer_id = customer_payments.customer_id"
+            "expression" : "customers.id = customers.id"
           },
           "joinType" : "LEFT"
         } ],
         "expressions" : [ {
           "expression" : {
-            "expression" : "customers.customer_id"
+            "expression" : "customers.ID"
           }
         }, {
           "expression" : {
             "expression" : "customers.first_name"
           }
-        }, {
-          "expression" : {
-            "expression" : "customers.last_name"
-          }
-        }, {
-          "expression" : {
-            "expression" : "customer_orders.first_order"
-          }
-        }, {
-          "expression" : {
-            "expression" : "customer_orders.most_recent_order"
-          }
-        }, {
-          "expression" : {
-            "expression" : "customer_orders.number_of_orders"
-          }
-        }, {
-          "expression" : {
-            "expression" : "customer_payments.total_amount"
-          },
-          "alias" : "customer_lifetime_value"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "cfKT1jhD##id", "cfKT1jhD##ID", "cfKT1jhD##first_name" ],
         "headAlias" : "customers"
       },
       "ports" : {
@@ -228,17 +158,12 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
             }, {
               "name" : "FIRST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "LAST_NAME",
               "dataType" : {
                 "type" : "String"
               }
@@ -250,24 +175,19 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ORDER_ID",
               "dataType" : {
                 "type" : "Number"
               }
             }, {
-              "name" : "FIRST_ORDER",
+              "name" : "ORDER_DATE",
               "dataType" : {
                 "type" : "Date"
               }
             }, {
-              "name" : "MOST_RECENT_ORDER",
+              "name" : "STATUS",
               "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "NUMBER_OF_ORDERS",
-              "dataType" : {
-                "type" : "Number"
+                "type" : "String"
               }
             } ]
           },
@@ -277,7 +197,7 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ORDER_ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -295,7 +215,7 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -303,31 +223,6 @@
               "name" : "FIRST_NAME",
               "dataType" : {
                 "type" : "String"
-              }
-            }, {
-              "name" : "LAST_NAME",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "FIRST_ORDER",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "MOST_RECENT_ORDER",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "NUMBER_OF_ORDERS",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_LIFETIME_VALUE",
-              "dataType" : {
-                "type" : "Number"
               }
             } ]
           },
@@ -342,6 +237,8 @@
       "component" : "SQLStatement",
       "metadata" : {
         "label" : "customer_payments",
+        "x" : 280,
+        "y" : 420,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -350,7 +247,7 @@
           "path" : "out",
           "id" : "out",
           "language" : "sql",
-          "content" : "SELECT \n  orders.customer_id,\n  sum(amount) AS total_amount\n\nFROM payments\nLEFT JOIN orders\n   ON payments.order_id = orders.order_id\n\nGROUP BY orders.customer_id\n"
+          "content" : "SELECT \n  orders.ORDER_ID,\n  sum(amount) AS total_amount\n\nFROM payments\nLEFT JOIN orders\n   ON payments.order_id = orders.order_id\n\nGROUP BY orders.ORDER_ID\n"
         } ]
       },
       "ports" : {
@@ -391,11 +288,6 @@
                 "type" : "Number"
               }
             }, {
-              "name" : "CUSTOMER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
               "name" : "ORDER_DATE",
               "dataType" : {
                 "type" : "Date"
@@ -414,7 +306,7 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ORDER_ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -436,15 +328,13 @@
       "component" : "Aggregate",
       "metadata" : {
         "label" : "customer_orders",
+        "x" : 280,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
       "properties" : {
         "aggregate" : [ {
-          "expression" : {
-            "expression" : "customer_id"
-          }
-        }, {
           "expression" : {
             "expression" : "min(order_date)"
           },
@@ -464,13 +354,9 @@
         "condition" : {
           "expression" : ""
         },
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
-        "groupBy" : [ {
-          "expression" : {
-            "expression" : "customer_id"
-          }
-        } ]
+        "activeTab" : "having",
+        "columnsSelector" : [ "TqNi8QkW##order_date", "TqNi8QkW##order_id" ],
+        "groupBy" : [ ]
       },
       "ports" : {
         "inputs" : [ {
@@ -479,11 +365,6 @@
             "providerType" : "Snowflake",
             "fields" : [ {
               "name" : "ORDER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_ID",
               "dataType" : {
                 "type" : "Number"
               }
@@ -506,24 +387,19 @@
           "schema" : {
             "providerType" : "Snowflake",
             "fields" : [ {
-              "name" : "CUSTOMER_ID",
+              "name" : "ORDER_ID",
               "dataType" : {
                 "type" : "Number"
               }
             }, {
-              "name" : "FIRST_ORDER",
+              "name" : "ORDER_DATE",
               "dataType" : {
                 "type" : "Date"
               }
             }, {
-              "name" : "MOST_RECENT_ORDER",
+              "name" : "STATUS",
               "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "NUMBER_OF_ORDERS",
-              "dataType" : {
-                "type" : "Number"
+                "type" : "String"
               }
             } ]
           },
@@ -538,6 +414,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "payments",
+        "x" : 20,
+        "y" : 220,
         "phase" : 0
       },
       "properties" : {
@@ -585,6 +463,8 @@
       "component" : "Model",
       "metadata" : {
         "label" : "orders",
+        "x" : 20,
+        "y" : 420,
         "phase" : 0
       },
       "properties" : {
@@ -601,11 +481,6 @@
             "providerType" : "Snowflake",
             "fields" : [ {
               "name" : "ORDER_ID",
-              "dataType" : {
-                "type" : "Number"
-              }
-            }, {
-              "name" : "CUSTOMER_ID",
               "dataType" : {
                 "type" : "Number"
               }

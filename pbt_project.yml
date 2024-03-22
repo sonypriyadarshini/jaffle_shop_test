@@ -32,6 +32,29 @@ jobs:
     enabled: true
     createdAt: '2024-03-11 09:41:54'
     author: sony@prophecy.io
+  jobs/airf:
+    name: airf
+    description: ''
+    fabricUID: 735
+    scheduler:
+      Composer: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: None
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-03-22 10:29:54'
+    author: sony@prophecy.io
 gemContainer:
   languageVersion: ''
   gemLibsVersion: ''
@@ -52,9 +75,6 @@ sqlModels:
       providerType: Snowflake
       fields:
       - name: ORDER_ID
-        dataType:
-          type: Number
-      - name: CUSTOMER_ID
         dataType:
           type: Number
       - name: ORDER_DATE
@@ -79,9 +99,6 @@ sqlModels:
       providerType: Snowflake
       fields:
       - name: ORDER_ID
-        dataType:
-          type: Number
-      - name: CUSTOMER_ID
         dataType:
           type: Number
       - name: ORDER_DATE
@@ -121,27 +138,12 @@ sqlModels:
     schema:
       providerType: Snowflake
       fields:
-      - name: CUSTOMER_ID
+      - name: ID
         dataType:
           type: Number
       - name: FIRST_NAME
         dataType:
           type: String
-      - name: LAST_NAME
-        dataType:
-          type: String
-      - name: FIRST_ORDER
-        dataType:
-          type: Date
-      - name: MOST_RECENT_ORDER
-        dataType:
-          type: Date
-      - name: NUMBER_OF_ORDERS
-        dataType:
-          type: Number
-      - name: CUSTOMER_LIFETIME_VALUE
-        dataType:
-          type: Number
     description: This table has basic information about a customer, as well as some
       derived facts based on a customer's orders
     author: sony@prophecy.io
@@ -185,13 +187,10 @@ sqlModels:
     schema:
       providerType: Snowflake
       fields:
-      - name: CUSTOMER_ID
+      - name: ID
         dataType:
           type: Number
       - name: FIRST_NAME
-        dataType:
-          type: String
-      - name: LAST_NAME
         dataType:
           type: String
     description: null
@@ -214,7 +213,7 @@ sqlSeeds:
       - name: id
         dataType:
           type: Number
-      - name: first_name
+      - name: first_name_looooonggggggggggggg
         dataType:
           type: String
       - name: last_name
@@ -233,7 +232,7 @@ sqlSeeds:
       - name: id
         dataType:
           type: Number
-      - name: user_id
+      - name: user_id_very_looooonggggggggggggggggg
         dataType:
           type: Number
       - name: order_date
