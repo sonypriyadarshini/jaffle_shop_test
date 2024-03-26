@@ -35,7 +35,7 @@ jobs:
   jobs/airf:
     name: airf
     description: ''
-    fabricUID: 735
+    fabricUID: 2526
     scheduler:
       Composer: {}
     cloudProvider: null
@@ -50,9 +50,9 @@ jobs:
     pipelines: []
     jobClusterMode:
       clusterMode:
-        Single: {}
+        Multi: {}
       clusterId: null
-    enabled: null
+    enabled: true
     createdAt: '2024-03-22 10:29:54'
     author: sony@prophecy.io
 gemContainer:

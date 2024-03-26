@@ -1,12 +1,12 @@
 {
   "metainfo" : {
-    "type" : "Composer",
-    "fabricId" : "735",
+    "type" : "Prophecy",
+    "fabricId" : "2526",
     "jobId" : "jobs/airf",
     "name" : "airf",
-    "dagName" : "staging_sony_jaffle_shop_airf",
+    "dagName" : "VmUHmZ1XAC_eMhCOVFmeRw_",
     "schedule" : "None",
-    "enabled" : false,
+    "enabled" : true,
     "alerting" : {
       "emails" : "",
       "onStart" : false,
@@ -16,6 +16,7 @@
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
       "ignore_first_depends_on_past" : true,
+      "pool" : "Zi9w9x9T",
       "do_xcom_push" : true
     },
     "availableFabrics" : [ {
@@ -63,7 +64,9 @@
       "name" : "air_PM1",
       "trialStartDate" : 1711103436654
     } ],
+    "endDate" : "2024-04-12",
     "catchup" : true,
+    "tags" : [ ],
     "scheduleTimeZone" : "UTC",
     "dagParams" : {
       "instances" : {
@@ -142,7 +145,7 @@
         "noVersionCheck" : null,
         "noWriteJson" : false,
         "printerWidth" : null,
-        "sqlFabricId" : "1584",
+        "sqlFabricId" : "2475",
         "gitEntityValue" : "branch",
         "logFormat" : null,
         "runModelWithChildren" : false,
